@@ -5,17 +5,18 @@
 #ifndef HEADER_GUARD_VICK_WRITE_FILE_H
 #define HEADER_GUARD_VICK_WRITE_FILE_H
 
-/*!
- * \file vick-write-file/lib.hh
- * \brief Save a file to disk.
- */
-
 #include <thread>
 
 #include "contents.hh"
 
 namespace vick {
 namespace write_file {
+
+/*!
+ * \file vick-write-file/lib.hh
+ * \brief Save a file to disk.
+ */
+
 /*!
  * \brief Save the file to disk, then return.
  *
