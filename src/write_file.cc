@@ -2,18 +2,20 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-#include "../lib.hh"
+#include <cstdio>
+#include <functional>
 #include <thread>
 #include <utility>
-#include <functional>
-#include <cstdio>
+
+#include "../lib.hh"
 
 namespace vick {
 namespace write_file {
 int write_to(const contents& c, const char* file_name) {
     struct file {
         FILE* raw;
-        file(const char* fn) : raw(std::fopen(fn, "w")) {}
+        file(const char* fn)
+            : raw(std::fopen(fn, "w")) {}
         ~file() { std::fclose(raw); }
     } f(file_name);
 
